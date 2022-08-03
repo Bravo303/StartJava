@@ -175,4 +175,3 @@ public class VariablesTheme {
         int min = allMin % 60;
         System.out.println("ЧЧ:ММ::СС " + hour + ":" + min + ":" + sec);
   }
-}
