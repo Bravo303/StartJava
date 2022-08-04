@@ -1,6 +1,5 @@
 public class VariablesTheme {
-    public static void main (String[] argrs) {
-        
+    public static void main(String[] argrs) { // пробел после main не нужен!
         //Задача №1
         System.out.println("\nЗадача №1. Создание переменных и вывод их значений на консоль.\n");
         byte ddr = 16;
@@ -24,13 +23,13 @@ public class VariablesTheme {
 
         //Задача №2
         System.out.println("\nЗадача №2. Расчет стоимости товара со скидкой.\n");
-        byte x = 100;
-        short y = 200;
-        byte sale = 11;
-        int saleSum = ((x + y) / 100) * sale;
-        int prodSum = (x + y) - saleSum;
-        System.out.println("Размер суммы скидок составляет: " + saleSum + " рубля.");
-        System.out.println("Общая стоимость товаров со скидкой составляет: " + prodSum + " рублей.");
+        byte pen = 100;
+        short book = 200;
+        byte discount = 11;
+        int discountSum = ((pen + book) / 100) * discount;
+        int discountPrice = (pen + book) - discountSum;
+        System.out.println("Размер суммы скидок составляет: " + discountSum + " рубля.");
+        System.out.println("Общая стоимость товаров со скидкой составляет: " + discountPrice + " рублей.");
         
         //Задача №3
         System.out.println("\nЗадача №3. Вывод на консоль слова 'JAVA'.\n");
@@ -66,16 +65,16 @@ public class VariablesTheme {
 
         //Задача №5
         System.out.println ("\nЗадача №5. Перестановка значений переменных.\n");
-        int num1 = 1;
-        int num2 = 2;
+        int num1 = 10;
+        int num2 = 3;
         System.out.println("Исходное значение первой переменной num1: " + num1);
         System.out.println("Исходное значение второй переменной num2: " + num2);
         
         //Третья переменная
-        int num3 = 1;
-        num1 = num1 + num3;
-        num2 = num2 - num3;
-        System.out.println("\n>>>>> Меняем местами с помощью третьей переменной num3: " + num3);
+        int num3 = num1;
+        num1 = num2;
+        num2 = num3;
+        System.out.println("\n>>>>> Меняем местами с помощью третьей переменной");
         System.out.println("Новое значение переменной num1: " + num1);
         System.out.println("Новое значение переменной num2: " + num2);
         
@@ -83,8 +82,9 @@ public class VariablesTheme {
         System.out.println("\n>>>>> Меняем местами с помощью арифметических операций");
         System.out.println("Исходное значение первой переменной num1: " + num1);
         System.out.println("Исходное значение второй переменной num2: " + num2);
-        num1 = --num1;
-        num2 = ++num2;
+        num1 -= num2;
+        num2 += num1;
+        num1 = num2 - num1;
         System.out.println("Новое значение переменной num1: " + num1);
         System.out.println("Новое значение переменной num2: " + num2);
 
@@ -92,10 +92,9 @@ public class VariablesTheme {
         System.out.println("\n>>>>> Меняем местами с помощью побитовых операций");
         System.out.println("Исходное значение первой переменной num1: " + num1);
         System.out.println("Исходное значение второй переменной num2: " + num2);
-        num2 = num2 >> num1;
-        num1 = ~num1 * (- 1);
-        System.out.println("\nБитовое значение num1: " + Integer.toBinaryString(num1));
-        System.out.println("Битовое значение num2: " + Integer.toBinaryString(num2));
+        num1 = num1 ^ num2;
+        num2 = num2 ^ num1;
+        num1 = num1 ^ num2;
         System.out.println("\nНовое значение переменной num1: " + num1);
         System.out.println("Новое значение переменной num2: " + num2);
         
@@ -106,64 +105,44 @@ public class VariablesTheme {
         byte sym3 = 64;
         byte sym4 = 94;
         byte sym5 = 95;
-        System.out.println("Символ " + (char)sym1 + ", код: " + sym1);
-        System.out.println("Символ " + (char)sym2 + ", код: " + sym2);
-        System.out.println("Символ " + (char)sym3 + ", код: " + sym3);
-        System.out.println("Символ " + (char)sym4 + ", код: " + sym4);
-        System.out.println("Символ " + (char)sym5 + ", код: " + sym5);
+        System.out.println("Символ " + (char) sym1 + ", код: " + sym1);// обязательный пробел после приведения типа!
+        System.out.println("Символ " + (char) sym2 + ", код: " + sym2);
+        System.out.println("Символ " + (char) sym3 + ", код: " + sym3);
+        System.out.println("Символ " + (char) sym4 + ", код: " + sym4);
+        System.out.println("Символ " + (char) sym5 + ", код: " + sym5);
 
         //Задача №7
         System.out.println("\nЗадача №7. Произведение и сумма цифр числа.");
         int number = 345;
-        
-        System.out.println("\nСначала так сделал, потом условие прочитал...");
-        String str = "" + number; // перевод числа в строку
-        String word1 = Character.toString(str.charAt(0)); // перевод значения по индексу в строке из char в строку
-        String word2 = Character.toString(str.charAt(1));
-        String word3 = Character.toString(str.charAt(2));
-        int newNum1 = Integer.parseInt(word1); // перевод строки в число
-        int newNum2 = Integer.parseInt(word2);
-        int newNum3 = Integer.parseInt(word3);
-        int sum = newNum1 + newNum2 + newNum3;
-        int proiz = newNum1 * newNum2 * newNum3;
-        System.out.println("\nСумма чисел числа " + number + " = " + sum);
-        System.out.println("Произведение чисел числа " + number + " = " + proiz);
-        System.out.println("\nСпособ по условиям задачи с использованием / и %");
-        int newNumber1 = number % 6;
-        int newNumber2 = number % 11;
-        int newNumber3 = number % 17;
+        int newNumber1 = number / 100;
+        int newNumber2 = number % 100 / 10;
+        int newNumber3 = number % 10;
         int newSum = newNumber1 + newNumber2 + newNumber3;
         int newProiz = newNumber1 * newNumber2 * newNumber3;
         System.out.println("\nСумма чисел числа " + number + " = " + newSum);
         System.out.println("Произведение чисел числа " + number + " = " + newProiz);
-        // P.S. Куда деление вставлять не очень понял ...
-
+        
         //Задача №8*
         System.out.println("\nЗадача №8*. Вывод на консоль ASCII-арт Дюка.\n");
-        String newSym1 = "/";
-        char newSym2 = (char)92;
-        String newSym3 = "_";
-        String newSym4 = " ";
-        String newSym5 ="(";
-        String newSym6 =")";
-        String str1 = newSym4 + newSym4 + newSym4 + newSym4 + newSym1 + newSym2 + newSym4 + newSym4 + newSym4 + newSym4;
-        String str2 = newSym4 + newSym4 + newSym4 + newSym1 + newSym4 + newSym4 + newSym2 + newSym4 + newSym4 + newSym4;
-        String str3 = newSym4 + newSym4 + newSym1 + newSym3 + newSym5 + newSym4 + newSym6 + newSym2 + newSym4 + newSym4;
-        String str4 = newSym4 + newSym1 + newSym4 + newSym4 + newSym4 + newSym4 + newSym4 + newSym4 + newSym2 + newSym4;
-        String str5 = newSym1 + newSym3 + newSym3 + newSym3 + newSym3 + newSym1 + newSym2 + newSym3 + newSym3 + newSym2;
-        System.out.println(str1);
-        System.out.println(str2);
-        System.out.println(str3);
-        System.out.println(str4);
-        System.out.println(str5);
-        
+        char slash = 47;
+        char backSlash = 92;
+        char under = 95;
+        char whiteSpace = 32;
+        char bracket1 = 40;
+        char bracket2 = 41;
+        System.out.println("" + whiteSpace + whiteSpace + whiteSpace + whiteSpace + slash + backSlash + whiteSpace + whiteSpace + whiteSpace + whiteSpace + "\n" + 
+            whiteSpace + whiteSpace + whiteSpace + slash + whiteSpace + whiteSpace + backSlash + whiteSpace + whiteSpace + whiteSpace + "\n" + 
+            whiteSpace + whiteSpace + slash + under + bracket1 + whiteSpace + bracket2 + backSlash + whiteSpace + whiteSpace + "\n" + 
+            whiteSpace + slash + whiteSpace + whiteSpace + whiteSpace + whiteSpace + whiteSpace + whiteSpace + backSlash + whiteSpace + "\n" + 
+            slash + under + under + under + under + slash + backSlash + under + under + backSlash);
+      
 
         //Задача №9*
         System.out.println("\nЗадача №9*. Отображение количества сотен, десятков и единиц числ.\n");
         int num = 123;
         int hundred = num / 100;
         int tens = (num % 100) / 10;
-        int ones = (num % 100) % 10;
+        int ones = num % 10;
         System.out.println( "Число " + num + " содержит: \n" + hundred + " сотня (-ен)\n" + tens + " десятка (-ов)\n" + ones + " единицы (-а)");
 
         //Задача №10*
@@ -175,3 +154,4 @@ public class VariablesTheme {
         int min = allMin % 60;
         System.out.println("ЧЧ:ММ::СС " + hour + ":" + min + ":" + sec);
   }
+}
