@@ -148,7 +148,7 @@ public class VariablesTheme {
         System.out.println( "Число " + num + " содержит: \n" + hundred + " сотня (-ен)\n" + tens + " десятка (-ов)\n" + ones + 
             " единицы (-а)");
 
-        //Задача №10**
+        //Задача №10*
         System.out.println("\nЗадача №10*. Преобразование секунд.\n");
         int time = 86399;
         int allMin = time / 60;
