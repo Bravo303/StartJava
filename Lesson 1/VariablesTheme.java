@@ -23,11 +23,11 @@ public class VariablesTheme {
 
         //Задача №2
         System.out.println("\nЗадача №2. Расчет стоимости товара со скидкой.\n");
-        byte pen = 100;
-        short book = 200;
+        byte penPrice = 100;
+        short bookPrice = 200;
         byte discount = 11;
-        int discountSum = ((pen + book) / 100) * discount;
-        int discountPrice = (pen + book) - discountSum;
+        int discountSum = ((penPrice + bookPrice) / 100) * discount;
+        int discountPrice = (penPrice + bookPrice) - discountSum;
         System.out.println("Размер суммы скидок составляет: " + discountSum + " рубля.");
         System.out.println("Общая стоимость товаров со скидкой составляет: " + discountPrice + " рублей.");
         
@@ -92,9 +92,9 @@ public class VariablesTheme {
         System.out.println("\n>>>>> Меняем местами с помощью побитовых операций");
         System.out.println("Исходное значение первой переменной num1: " + num1);
         System.out.println("Исходное значение второй переменной num2: " + num2);
-        num1 = num1 ^ num2;
-        num2 = num2 ^ num1;
-        num1 = num1 ^ num2;
+        num1 ^= num2;
+        num2 ^= num1;
+        num1 ^= num2;
         System.out.println("\nНовое значение переменной num1: " + num1);
         System.out.println("Новое значение переменной num2: " + num2);
         
@@ -105,7 +105,8 @@ public class VariablesTheme {
         byte sym3 = 64;
         byte sym4 = 94;
         byte sym5 = 95;
-        System.out.println("Символ " + (char) sym1 + ", код: " + sym1);// обязательный пробел после приведения типа!
+        // обязательный пробел после приведения типа, например (char) sym1!
+        System.out.println("Символ " + (char) sym1 + ", код: " + sym1);
         System.out.println("Символ " + (char) sym2 + ", код: " + sym2);
         System.out.println("Символ " + (char) sym3 + ", код: " + sym3);
         System.out.println("Символ " + (char) sym4 + ", код: " + sym4);
@@ -117,10 +118,10 @@ public class VariablesTheme {
         int newNumber1 = number / 100;
         int newNumber2 = number % 100 / 10;
         int newNumber3 = number % 10;
-        int newSum = newNumber1 + newNumber2 + newNumber3;
-        int newProiz = newNumber1 * newNumber2 * newNumber3;
-        System.out.println("\nСумма чисел числа " + number + " = " + newSum);
-        System.out.println("Произведение чисел числа " + number + " = " + newProiz);
+        int sumDigits = newNumber1 + newNumber2 + newNumber3;
+        int prodDigits = newNumber1 * newNumber2 * newNumber3;
+        System.out.println("\nСумма чисел числа " + number + " = " + sumDigits);
+        System.out.println("Произведение чисел числа " + number + " = " + prodDigits);
         
         //Задача №8*
         System.out.println("\nЗадача №8*. Вывод на консоль ASCII-арт Дюка.\n");
@@ -130,11 +131,12 @@ public class VariablesTheme {
         char whiteSpace = 32;
         char bracket1 = 40;
         char bracket2 = 41;
-        System.out.println("" + whiteSpace + whiteSpace + whiteSpace + whiteSpace + slash + backSlash + whiteSpace + whiteSpace + whiteSpace + whiteSpace + "\n" + 
-            whiteSpace + whiteSpace + whiteSpace + slash + whiteSpace + whiteSpace + backSlash + whiteSpace + whiteSpace + whiteSpace + "\n" + 
-            whiteSpace + whiteSpace + slash + under + bracket1 + whiteSpace + bracket2 + backSlash + whiteSpace + whiteSpace + "\n" + 
-            whiteSpace + slash + whiteSpace + whiteSpace + whiteSpace + whiteSpace + whiteSpace + whiteSpace + backSlash + whiteSpace + "\n" + 
-            slash + under + under + under + under + slash + backSlash + under + under + backSlash);
+        System.out.println("" + whiteSpace + whiteSpace + whiteSpace + whiteSpace + slash + backSlash + whiteSpace + whiteSpace + 
+            whiteSpace + whiteSpace + "\n" + whiteSpace + whiteSpace + whiteSpace + slash + whiteSpace + whiteSpace + backSlash + 
+            whiteSpace + whiteSpace + whiteSpace + "\n" + whiteSpace + whiteSpace + slash + under + bracket1 + whiteSpace + bracket2 + 
+            backSlash + whiteSpace + whiteSpace + "\n" + whiteSpace + slash + whiteSpace + whiteSpace + whiteSpace + whiteSpace + 
+            whiteSpace + whiteSpace + backSlash + whiteSpace + "\n" + slash + under + under + under + under + slash + backSlash + 
+            under + under + backSlash);
       
 
         //Задача №9*
@@ -143,7 +145,8 @@ public class VariablesTheme {
         int hundred = num / 100;
         int tens = (num % 100) / 10;
         int ones = num % 10;
-        System.out.println( "Число " + num + " содержит: \n" + hundred + " сотня (-ен)\n" + tens + " десятка (-ов)\n" + ones + " единицы (-а)");
+        System.out.println( "Число " + num + " содержит: \n" + hundred + " сотня (-ен)\n" + tens + " десятка (-ов)\n" + ones + 
+            " единицы (-а)");
 
         //Задача №10*
         System.out.println("\nЗадача №10*. Преобразование секунд.\n");
