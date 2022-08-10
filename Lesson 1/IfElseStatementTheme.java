@@ -40,20 +40,21 @@ public class IfElseStatementTheme {
         }
         
         System.out.println("\nЗадача №3. Работа с числом.");
-        int num = 3;
+        int num = 0;
         System.out.println("Заданное число равно " + num);
         if (num == 0) {
-            System.out.println("Число равно Нулю!");
-        }  
-        if (num % 2 != 0 && num != 0) {
-            System.out.println("Число нечетное");
-        } else if (num % 2 == 0 && num != 0) {
-            System.out.println("Число четное");
-        } 
-        if (num > 0 ) {
-            System.out.println("Число положительное");
-        } else if (num < 0 ) {
-            System.out.println("Число отрицательное");
+            System.out.println("Число - 0");
+        } else {
+            if (num % 2 == 0) {
+                System.out.println("Число четное");
+             } else {
+                System.out.println("Число нечетное");
+            }
+            if (num < 0) {
+                System.out.println("Число отрицательное");
+            } else {
+                System.out.println("Число положительное");
+            }
         }
                 
         System.out.println("\nЗадача №4. Поиск одинаковых цифр в числах.");
@@ -92,41 +93,41 @@ public class IfElseStatementTheme {
        }
        
        System.out.println("\nЗадача №6. Определение суммы вклада и начисленных банком %.");
-       int deposit = 350000;
-       int fiveProcent = deposit / 100 * 5;
-       int sevenProcent = deposit / 100 * 7;
-       int tenProcent = deposit / 100 * 10;
-       int lowDeposit = deposit + fiveProcent;
-       int middleDeposit = deposit + sevenProcent;
-       int hightDeposit = deposit + tenProcent;
+       int deposit = 305000;
        if (deposit < 100000) {
-            System.out.println("Сумма вклада: " + deposit + " Рублей" + "\n" + "Начисленный %: " + fiveProcent + " Рублей" + "\n" + 
-            "Итоговая сумма с процентами: " + lowDeposit + " Рублей");
-       } else if (deposit > 100000 && deposit < 300000) {
-            System.out.println("Сумма вклада: " + deposit + " Рублей" + "\n" + "Начисленный %: " + sevenProcent + " Рублей" + "\n" + 
-            "Итоговая сумма с процентами: " + middleDeposit + " Рублей");
-       } else if (deposit > 300000) {
-            System.out.println("Сумма вклада: " + deposit + " Рублей" + "\n" + "Начисленный %: " + tenProcent + " Рублей" + "\n" + 
-            "Итоговая сумма с процентами: " + hightDeposit + " Рублей");
+            int fiveProcent = (deposit / 100) * 5;
+            int lowDeposit = fiveProcent + deposit;
+                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + fiveProcent + "\n" 
+            + "Сумма с процентами: " + lowDeposit);
+       } else if (deposit >= 100000 && deposit < 300000) {
+            int sevenProcent = (deposit / 100) * 7;
+            int middleDeposit = sevenProcent + deposit;
+                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + sevenProcent + "\n" 
+            + "Сумма с процентами: " + middleDeposit);
+       } else if (deposit >= 300000) {
+            int tenProcent = (deposit / 100) * 10;
+            int hightDeposit = tenProcent + deposit;
+                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + tenProcent + "\n" 
+            + "Сумма с процентами: " + hightDeposit);
        }
-       
+
        System.out.println("\nЗадача №7. Определение оценки по предметам.");
        int history = 59;
        int prog = 91;
        int historyBall = 0;
        int progBall = 0; 
-       if (history <=60) {
-        historyBall = 2;
-            System.out.println("Предмет: История, оценка: " + historyBall);
+       if (history <= 60) {
+            historyBall = 2;
+                System.out.println("Предмет: История, оценка: " + historyBall);
        } else if (history > 60 && history <= 73) {
-        historyBall = 3;
-            System.out.println("Предмет: История, оценка: " + historyBall);
-       } else if (history > 73 && history <=91) {
-        historyBall = 4;
-            System.out.println("Предмет: История, оценка: " + historyBall);
-       } else if (history > 91 && history <=100) {
-        historyBall = 5;
-            System.out.println("Предмет: История, оценка: " + historyBall);
+            historyBall = 3;
+                System.out.println("Предмет: История, оценка: " + historyBall);
+       } else if (history > 73 && history <= 91) {
+            historyBall = 4;
+                System.out.println("Предмет: История, оценка: " + historyBall);
+       } else if (history > 91 && history <= 100) {
+            historyBall = 5;
+                System.out.println("Предмет: История, оценка: " + historyBall);
        }
        if (prog <=60) {
         progBall = 2;
@@ -148,7 +149,7 @@ public class IfElseStatementTheme {
        int rent = 5000;
        int sale = 13000;
        int costPrice = 9000;
-       int profit = (sale * 12) - (costPrice * 12) - (rent * 12);
+       int profit = (sale - costPrice - rent) * 12;
        if (profit > 0) {
             System.out.println("Прибыль за год составляет: " + "+" + profit + " руб.");
        } else if (profit < 0) {
@@ -175,8 +176,6 @@ public class IfElseStatementTheme {
             + (oneBlancCount + oneBlanc) +"\n" + "Исходная сумма составляет: " + ((hundredBlanc * hundredBlancNom) + (tenBlancNom * 5) + 
                 ((oneBlanc + oneBlancCount) * oneBlancNom)));
        }
-
-
-}
+    }
 }
 
