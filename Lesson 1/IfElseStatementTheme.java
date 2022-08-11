@@ -80,36 +80,31 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\nЗадача №5. Определение буквы, числа или символа по их коду.");
-        char escape = '\u0057';
+        char escape = '\u0013';//'\u0057'
         System.out.println("Значение по данному в условии задачи коду : " + escape);
-        if (Character.isLowerCase(escape)) {
-            System.out.println("Это маленькая буква");
-        } else if (Character.isUpperCase(escape)) {
-            System.out.println("Это большая буква");
-       } else if (Character.isDigit(escape)) {
+        if (escape >= (char) 48 && escape <= (char) 57) {
             System.out.println("Это цифра");
-       } else {
+        } else if (escape >= (char) 97 && escape <= (char) 122) {
+            System.out.println("Это маленькая буква");
+        } else if (escape >= (char) 65 && escape <= (char) 90) {
+            System.out.println("Это большая буква");
+        } else {
             System.out.println("Это не буква и не цифра");
-       }
-       
+        }
+
        System.out.println("\nЗадача №6. Определение суммы вклада и начисленных банком %.");
-       int deposit = 305000;
+       int deposit = 100000;
+       int procent = 0;
        if (deposit < 100000) {
-            int fiveProcent = (deposit / 100) * 5;
-            int lowDeposit = fiveProcent + deposit;
-                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + fiveProcent + "\n" 
-            + "Сумма с процентами: " + lowDeposit);
+       procent = (deposit / 100) * 5;
        } else if (deposit >= 100000 && deposit < 300000) {
-            int sevenProcent = (deposit / 100) * 7;
-            int middleDeposit = sevenProcent + deposit;
-                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + sevenProcent + "\n" 
-            + "Сумма с процентами: " + middleDeposit);
+       procent = (deposit / 100) * 7;
        } else if (deposit >= 300000) {
-            int tenProcent = (deposit / 100) * 10;
-            int hightDeposit = tenProcent + deposit;
-                System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + tenProcent + "\n" 
-            + "Сумма с процентами: " + hightDeposit);
+       procent = (deposit / 100) *10;
        }
+       System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + procent + "\n" +
+            "Сумма с %: " + (deposit + procent));
+       
 
        System.out.println("\nЗадача №7. Определение оценки по предметам.");
        int history = 59;
@@ -117,31 +112,24 @@ public class IfElseStatementTheme {
        int historyBall = 0;
        int progBall = 0; 
        if (history <= 60) {
-            historyBall = 2;
-                System.out.println("Предмет: История, оценка: " + historyBall);
+       historyBall = 2;
        } else if (history > 60 && history <= 73) {
-            historyBall = 3;
-                System.out.println("Предмет: История, оценка: " + historyBall);
+       historyBall = 3;
        } else if (history > 73 && history <= 91) {
-            historyBall = 4;
-                System.out.println("Предмет: История, оценка: " + historyBall);
+       historyBall = 4;
        } else if (history > 91 && history <= 100) {
-            historyBall = 5;
-                System.out.println("Предмет: История, оценка: " + historyBall);
+       historyBall = 5;
        }
-       if (prog <=60) {
-        progBall = 2;
-            System.out.println("Предмет: Программирование, оценка: " + progBall);
+       if (prog <= 60) {
+       progBall = 2;
        } else if (prog > 60 && prog <= 73) {
-        progBall = 3;
-            System.out.println("Предмет: Программирование, оценка: " + progBall);
-       } else if (prog > 73 && prog <=91) {
-        progBall = 4;
-            System.out.println("Предмет: Программирование, оценка: " + progBall);
-       } else if (prog > 91 && prog <=100) {
-        progBall = 5;
-            System.out.println("Предмет: Программирование, оценка: " + progBall);
+       progBall = 3;
+       } else if (prog > 73 && prog <= 91) {
+       progBall = 4;
+       } else if (prog > 91 && prog <= 100) {
+       progBall = 5;
        }
+       System.out.println ("Предмет: Программирование, оценка: " + progBall + "\n" + "Предмет: История, оценка: " + historyBall);
        System.out.println("Средний балл по предметам: " + (historyBall + progBall) /2 );
        System.out.println("Средний процент по предметам: " + (history + prog) / 2 + "%");
 
@@ -162,7 +150,7 @@ public class IfElseStatementTheme {
        int oneBlancNom = 1;
        System.out.println("Номиналы банкнот: " + "\n" + hundredBlancNom + "$ банкнота" + "\n" + tenBlancNom + "$ банкнота - 5 шт осталось" 
         + "\n" + oneBlancNom + "$ банкнота\n");
-       int finalSum = 567; // 567
+       int finalSum = 665; // 567
        System.out.println("Исходная сумма $: " + finalSum);
        int hundredBlanc = finalSum / hundredBlancNom; //(5)
        System.out.println("Сотен нужно: " + hundredBlanc);
@@ -172,9 +160,9 @@ public class IfElseStatementTheme {
        System.out.println("Единичек нужно: " + oneBlanc + "\n");
        if (tenBlanc > 5) {
         int oneBlancCount = (tenBlanc - 5) * tenBlancNom / oneBlancNom;
-            System.out.println("При учете остатка 10$ банкнот: \nСотен нужно: "+ hundredBlanc + "\nДесяток нужно: 5" + "\nЕдиничек нужно: " 
-            + (oneBlancCount + oneBlanc) +"\n" + "Исходная сумма составляет: " + ((hundredBlanc * hundredBlancNom) + (tenBlancNom * 5) + 
-                ((oneBlanc + oneBlancCount) * oneBlancNom)));
+        System.out.println("При учете остатка 10$ банкнот: \nСотен нужно: "+ hundredBlanc + "\nДесяток нужно: 5" +
+        "\nЕдиничек нужно: " + (oneBlancCount + oneBlanc) +"\n" + "Исходная сумма составляет: " + ((hundredBlanc *
+        hundredBlancNom) + (tenBlancNom * 5) + ((oneBlanc + oneBlancCount) * oneBlancNom)));
        }
     }
 }
