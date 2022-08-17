@@ -80,13 +80,13 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\nЗадача №5. Определение буквы, числа или символа по их коду.");
-        char escape = '\u0013';//'\u0057'
-        System.out.println("Значение по данному в условии задачи коду : " + escape);
-        if (escape >= (char) 48 && escape <= (char) 57) {
+        char someChar = '\u0013';//'\u0057'
+        System.out.println("Значение по данному в условии задачи коду : " + someChar);
+        if (someChar >= '0' && someChar <= '9') {
             System.out.println("Это цифра");
-        } else if (escape >= (char) 97 && escape <= (char) 122) {
+        } else if (someChar >= 'a' && someChar <= 'z') {
             System.out.println("Это маленькая буква");
-        } else if (escape >= (char) 65 && escape <= (char) 90) {
+        } else if (someChar >= 'A' && someChar <= 'Z') {
             System.out.println("Это большая буква");
         } else {
             System.out.println("Это не буква и не цифра");
@@ -96,38 +96,37 @@ public class IfElseStatementTheme {
        int deposit = 100000;
        int procent = 0;
        if (deposit < 100000) {
-       procent = (deposit / 100) * 5;
+           procent = (deposit / 100) * 5;
        } else if (deposit >= 100000 && deposit < 300000) {
-       procent = (deposit / 100) * 7;
+           procent = (deposit / 100) * 7;
        } else if (deposit >= 300000) {
-       procent = (deposit / 100) *10;
+           procent = (deposit / 100) * 10;
        }
        System.out.println("Сумма вклада: " + deposit + "\n" + "Начисленный процент: " + procent + "\n" +
             "Сумма с %: " + (deposit + procent));
        
-
        System.out.println("\nЗадача №7. Определение оценки по предметам.");
        int history = 59;
        int prog = 91;
        int historyBall = 0;
        int progBall = 0; 
        if (history <= 60) {
-       historyBall = 2;
+           historyBall = 2;
        } else if (history > 60 && history <= 73) {
-       historyBall = 3;
+           historyBall = 3;
        } else if (history > 73 && history <= 91) {
-       historyBall = 4;
+           historyBall = 4;
        } else if (history > 91 && history <= 100) {
-       historyBall = 5;
+           historyBall = 5;
        }
        if (prog <= 60) {
-       progBall = 2;
+           progBall = 2;
        } else if (prog > 60 && prog <= 73) {
-       progBall = 3;
+           progBall = 3;
        } else if (prog > 73 && prog <= 91) {
-       progBall = 4;
+           progBall = 4;
        } else if (prog > 91 && prog <= 100) {
-       progBall = 5;
+           progBall = 5;
        }
        System.out.println ("Предмет: Программирование, оценка: " + progBall + "\n" + "Предмет: История, оценка: " + historyBall);
        System.out.println("Средний балл по предметам: " + (historyBall + progBall) /2 );
